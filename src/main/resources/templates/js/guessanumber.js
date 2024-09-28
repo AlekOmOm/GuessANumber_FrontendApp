@@ -29,7 +29,7 @@ function checkGuess() {
             resetGameState();
         } else {
             attempts++;
-            message.textContent = informMessage(guessValue);
+            message.textContent = feedbackMessage(guessValue);
             message.classList.remove('correct');
             message.classList.add('wrong');
         }
@@ -48,7 +48,7 @@ function isCorrect(guessValue) {
     return guessValue === computerNumber;
 }
 
-function informMessage(guessValue) {
+function feedbackMessage(guessValue) {
     if (guessValue < computerNumber) {
         return "Try again! The number is higher. You have made " + attempts + " attempts.";
     } else {
